@@ -4,15 +4,9 @@ def is_balanced(s, open_paren_count):
     #print str(open_paren_count) + " - " + s
 
     if len(s) == 0:
-        if open_paren_count == 0:
-            return True
-        else:
-            return False
+        return open_paren_count == 0
     if len(s) == 1:
-        if (s not in ("(", ")") and open_paren_count == 0) or (open_paren_count == 1 and s == ')') or (open_paren_count == 0 and s == ':'):
-            return True
-        else:
-            return False
+        return (s not in ("(", ")") and open_paren_count == 0) or (open_paren_count == 1 and s == ')') or (open_paren_count == 0 and s == ':')
 
     candidates = []
     if s[0] == ")":
